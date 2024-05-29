@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  redis:
+    image: redis:latest
+
+  receiver-service:
+    build: ./receiver-service
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+      - redis
+
+  listener-service:
+    build: ./listener-service
+    depends_on:
+      - postgres
+      - redis
+
+volumes:
+  pgdata:

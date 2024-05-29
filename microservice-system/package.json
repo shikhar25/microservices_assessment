@@ -1,0 +1,19 @@
+{
+  "name": "microservice-system",
+  "version": "1.0.0",
+  "description": "This project demonstrates a PubSub architecture using Node.js, Docker, Postgres, and Redis.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
+    "mongoose": "^8.4.0",
+    "redis": "^4.6.14",
+    "uuid": "^9.0.1"
+  }
+}
